@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Women’s Well-Being App</title>
+    <link rel="stylesheet" href="style/main.css">
+</head>
+<body>
+    <div class="login-container">
+
+        <h1>Welcome Back!</h1>
+        <p>Log in to continue tracking your well-being.</p>
+
+        <!-- Login Form -->
+        <form id="login-form">
+            <label for="email">Email</label>
+            <input type="email" id="email" placeholder="Enter your email" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required>
+
+            <button type="submit" id="login-btn">Login</button>
+        </form>
+
+        <p>Don't have an account? <a href="#" id="signup-link">Sign up here</a></p>
+
+        <!-- Signup Form (hidden by default) -->
+        <form id="signup-form" class="hidden">
+            <h2>Create an Account</h2>
+
+            <label for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" placeholder="Enter your name" required>
+
+            <label for="signup-email">Email</label>
+            <input type="email" id="signup-email" placeholder="Enter your email" required>
+
+            <label for="signup-password">Password</label>
+            <input type="password" id="signup-password" placeholder="Enter your password" required>
+
+            <button type="submit" id="signup-btn">Sign Up</button>
+        </form>
+
+    </div>
+
+    <script src="firebase.js"></script>
+    <script src="scripts/app.js"></script>
+    <script>
+        // Simple toggle between login and signup forms
+        const loginForm = document.getElementById('login-form');
+        const signupForm = document.getElementById('signup-form');
+        const signupLink = document.getElementById('signup-link');
+
+        signupLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            loginForm.classList.toggle('hidden');
+            signupForm.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women’s Well-Being Dashboard</title>
+    <link rel="stylesheet" href="style/main.css">
+    <!-- Chart.js CDN for graphs -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>Welcome, <span id="username">User</span>!</h1>
+        <nav>
+            <a href="login.html">Logout</a>
+        </nav>
+    </header>
+
+    <!-- Main Dashboard -->
+    <main>
+        <div class="dashboard-container">
+
+            <!-- Hydration Tracker Card -->
+            <section class="card" id="hydration-card">
+                <h2>Hydration Tracker</h2>
+                <p>Glasses drank today: <span id="hydration-count">0</span></p>
+                <button id="add-glass-btn">Add Glass</button>
+            </section>
+
+            <!-- Mood Tracker Card -->
+            <section class="card" id="mood-card">
+                <h2>Mood Tracker</h2>
+                <p>Today's Mood: <span id="today-mood">😊</span></p>
+                <button id="log-mood-btn">Log Mood</button>
+            </section>
+
+            <!-- Exercise Tracker Card -->
+            <section class="card" id="exercise-card">
+                <h2>Exercise Tracker</h2>
+                <p>Minutes exercised today: <span id="exercise-minutes">0</span></p>
+                <button id="log-exercise-btn">Log Exercise</button>
+            </section>
+
+            <!-- Nutrition Tracker Card -->
+            <section class="card" id="nutrition-card">
+                <h2>Nutrition Tracker</h2>
+                <p>Meals logged today: <span id="meals-count">0</span></p>
+                <button id="log-meal-btn">Log Meal</button>
+            </section>
+
+            <!-- Menstrual Cycle Tracker Card -->
+            <section class="card" id="menstrual-card">
+                <h2>Menstrual Tracker</h2>
+                <p>Next period: <span id="next-period">--/--/----</span></p>
+                <button id="update-cycle-btn">Update Cycle</button>
+            </section>
+
+        </div>
+
+        <!-- Weekly Insights Chart -->
+        <section class="card" id="insights-card">
+            <h2>Weekly Insights</h2>
+            <canvas id="weekly-chart"></canvas>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 Women’s Well-Being App</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="firebase.js"></script>
+    <script src="scripts/hydration.js"></script>
+    <script src="scripts/mood.js"></script>
+    <script src="scripts/exercise.js"></script>
+    <script src="scripts/nutrition.js"></script>
+    <script src="scripts/menstrual.js"></script>
+    <script src="charts/weeklyInsights.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
